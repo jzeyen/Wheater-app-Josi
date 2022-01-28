@@ -18,6 +18,9 @@ li {
   display: list-item;
   text-align: -webkit-match-parent;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
 h1 {
   display: block;
   font-size: 2em;

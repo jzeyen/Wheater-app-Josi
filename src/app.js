@@ -10,10 +10,16 @@ let weekdays = [
 ];
 let currentWeekday = weekdays[currentTime.getDay()];
 let currentHour = currentTime.getHours();
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
 let currentMinutes = currentTime.getMinutes();
+if (currentMinutes < 10) {
+  currentMinutes = `0${currentMinutes}`;
+}
 document.querySelector(
   "#currentTime"
-).innerHTML = `${currentWeekday} ${currentHour}:${currentMinutes} `;
+).innerHTML = `${currentWeekday} ${currentHour}:${currentMinutes}`;
 
 function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
