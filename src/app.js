@@ -49,3 +49,28 @@ if (currentMinutes < 10) {
 document.querySelector(
   "#currentTime"
 ).innerHTML = `${currentWeekday} ${currentHour}:${currentMinutes}`;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class=row>`;
+  let days = ["Fri", "Sat", "Sund", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class="WeatherForecastPreview">
+                <div class="forecast-time">${day}</div>
+                <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">-4°</span
+                  ><span class="forecast-temperature-min">-9°</span>
+                </div>
+              </div>
+            </div>        
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
