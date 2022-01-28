@@ -1,26 +1,3 @@
-let currentTime = new Date();
-let weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let currentWeekday = weekdays[currentTime.getDay()];
-let currentHour = currentTime.getHours();
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
-}
-let currentMinutes = currentTime.getMinutes();
-if (currentMinutes < 10) {
-  currentMinutes = `0${currentMinutes}`;
-}
-document.querySelector(
-  "#currentTime"
-).innerHTML = `${currentWeekday} ${currentHour}:${currentMinutes}`;
-
 function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -49,3 +26,26 @@ function searchCity(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+let currentTime = new Date();
+let weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let currentWeekday = weekdays[currentTime.getDay()];
+let currentHour = currentTime.getHours();
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
+let currentMinutes = currentTime.getMinutes();
+if (currentMinutes < 10) {
+  currentMinutes = `0${currentMinutes}`;
+}
+document.querySelector(
+  "#currentTime"
+).innerHTML = `${currentWeekday} ${currentHour}:${currentMinutes}`;
